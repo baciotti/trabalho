@@ -1,0 +1,496 @@
+/* ==========================================================
+   HEIDEGGER
+   Normalizador de Relatórios
+========================================================== */
+
+:root{
+
+    --bg:#0f1115;
+    --panel:#181b22;
+    --panel-hover:#20252e;
+
+    --border:#3c4554;
+
+    --text:#F5F5F5;
+    --text-soft:#A6AFBD;
+
+    --primary:#6EA8FE;
+    --success:#2fbf71;
+
+    --shadow:0 15px 40px rgba(0,0,0,.35);
+
+}
+
+/* ==========================================================
+   GERAL
+========================================================== */
+
+*{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+}
+
+html,
+body{
+
+    height:100%;
+
+}
+
+body{
+
+    background:var(--bg);
+    color:var(--text);
+    font-family:Inter,sans-serif;
+
+    overflow-x:hidden;
+
+}
+
+/* ==========================================================
+   PAINEL ESQUERDO
+========================================================== */
+
+.left-panel{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:flex-start;
+
+    padding:35px 55px;
+
+    overflow-y:auto;
+
+}
+
+.content{
+
+    width:100%;
+    max-width:700px;
+
+}
+
+/* ==========================================================
+   LOGO
+========================================================== */
+
+.brand{
+
+    display:flex;
+    align-items:center;
+    gap:20px;
+
+    margin-bottom:25px;
+
+}
+
+.brand i{
+
+    font-size:42px;
+    color:var(--primary);
+
+}
+
+.brand h1{
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:4.7rem;
+
+    line-height:1;
+
+    margin:0;
+
+    letter-spacing:2px;
+
+}
+
+.brand span{
+
+    display:block;
+
+    margin-top:8px;
+
+    text-transform:uppercase;
+
+    letter-spacing:4px;
+
+    font-size:.90rem;
+
+    color:var(--text-soft);
+
+}
+
+/* ==========================================================
+   FRASE
+========================================================== */
+
+blockquote{
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:2rem;
+
+    color:var(--primary);
+
+    margin-bottom:30px;
+
+    border-left:4px solid var(--primary);
+
+    padding-left:22px;
+
+}
+
+blockquote footer{
+
+    margin-top:12px;
+
+    color:#d0d0d0;
+
+    font-size:1.05rem;
+
+}
+
+/* ==========================================================
+   DROPZONE
+========================================================== */
+
+#dropZone{
+
+    background:rgba(24,27,34,.92);
+
+    border:2px dashed var(--border);
+
+    border-radius:20px;
+
+    padding:45px;
+
+    text-align:center;
+
+    cursor:pointer;
+
+    transition:.30s;
+
+    user-select:none;
+
+    box-shadow:var(--shadow);
+
+}
+
+#dropZone:hover{
+
+    background:var(--panel-hover);
+
+    border-color:var(--primary);
+
+    transform:translateY(-3px);
+
+}
+
+#dropZone.drag{
+
+    background:#252d38;
+
+    border-color:var(--primary);
+
+    transform:scale(1.01);
+
+}
+
+.drop-icon{
+
+    margin-bottom:18px;
+
+}
+
+.drop-icon i{
+
+    font-size:68px;
+
+    color:var(--primary);
+
+}
+
+#dropZone h3{
+
+    margin-bottom:10px;
+
+    font-size:1.7rem;
+
+}
+
+#dropZone p{
+
+    margin:0;
+
+    color:var(--text-soft);
+
+    line-height:1.7;
+
+}
+
+/* ==========================================================
+   CARDS
+========================================================== */
+
+.status-card,
+.history-card{
+
+    margin-top:18px;
+
+    background:rgba(24,27,34,.92);
+
+    border-radius:18px;
+
+    border:1px solid rgba(255,255,255,.05);
+
+    padding:22px;
+
+    box-shadow:var(--shadow);
+
+    backdrop-filter:blur(8px);
+
+}
+
+.status-title,
+.history-title{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    margin-bottom:15px;
+
+    color:var(--primary);
+
+    font-weight:600;
+
+}
+
+#statusMessage{
+
+    min-height:28px;
+
+    margin-bottom:15px;
+
+}
+
+.progress{
+
+    height:8px;
+
+    background:#2b313c;
+
+    border-radius:20px;
+
+}
+
+.progress-bar{
+
+    transition:width .4s;
+
+}
+
+#history{
+
+    max-height:180px;
+
+    overflow:auto;
+
+    padding-right:5px;
+
+}
+
+.history-empty{
+
+    color:var(--text-soft);
+
+}
+
+.history-item{
+
+    background:#252a33;
+
+    border-left:4px solid var(--success);
+
+    border-radius:10px;
+
+    padding:14px;
+
+    margin-bottom:10px;
+
+}
+
+.history-item strong{
+
+    display:block;
+
+    margin-bottom:5px;
+
+}
+
+.history-item small{
+
+    color:var(--text-soft);
+
+}
+
+/* ==========================================================
+   RODAPÉ
+========================================================== */
+
+.footer{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-top:20px;
+
+    margin-bottom:15px;
+
+    color:var(--text-soft);
+
+    font-size:.85rem;
+
+}
+
+.footer i{
+
+    color:var(--success);
+
+}
+
+/* ==========================================================
+   FOTO
+========================================================== */
+
+.image-panel{
+
+    position:relative;
+
+    overflow:hidden;
+
+    padding:0;
+
+}
+
+.image-panel img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    object-position:center;
+
+    filter:grayscale(100%) contrast(105%);
+
+}
+
+.image-overlay{
+
+    position:absolute;
+
+    left:0;
+
+    top:0;
+
+    bottom:0;
+
+    width:220px;
+
+    background:linear-gradient(to right,var(--bg),transparent);
+
+}
+
+/* ==========================================================
+   SCROLL
+========================================================== */
+
+::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#3d4758;
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:transparent;
+
+}
+
+/* ==========================================================
+   RESPONSIVO
+========================================================== */
+
+@media(max-width:991px){
+
+    body{
+
+        overflow:auto;
+
+    }
+
+    .left-panel{
+
+        order:2;
+
+        padding:30px;
+
+    }
+
+    .image-panel{
+
+        order:1;
+
+        height:40vh;
+
+    }
+
+    .brand h1{
+
+        font-size:3.3rem;
+
+    }
+
+    blockquote{
+
+        font-size:1.6rem;
+
+    }
+
+    #dropZone{
+
+        padding:35px;
+
+    }
+
+    .footer{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:8px;
+
+    }
+
+}
